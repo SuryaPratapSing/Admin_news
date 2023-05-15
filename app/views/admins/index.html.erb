@@ -1,0 +1,58 @@
+
+<h1>Admin  pannel</h1>
+
+
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+    <th scope="colum">Id</th>
+      <th scope="colum">CATEGORY</th>
+      <th scope="colum">CITY</th>
+      <th scope="colum">AUTHOR</th>
+      <th scope="colum">TITLE</th>
+      <th scope="colum">SHORT_DISCRIPTION</th>
+      <th scope="colum">DISCRIPTION</th>
+      
+      <th scope="colum">created_at</th>
+      <th scope="colum">updated_at</th>
+      <th scope="colum">Show News</th>
+      <th scope="colum">Edit News</th>
+      <th scope="colum">Delete News</th>
+      
+     
+    </tr>
+  </thead>
+  <tbody>
+  <% @admins.each do |user| %>
+    <tr>
+    <td><%= user.id %></td>
+      <td><%= user.CATEGORY %></td>
+      <td><%= user.CITY %></td>
+      <td><%= user.AUTHOR %></td>
+      <td><%= user.TITLE %></td>
+      <td><%= user.SHORT %></td>
+      <td><%= user.DISCRIPTION %></td>
+      
+      <td><%= user.created_at %></td>
+      <td><%= user.updated_at %></td>
+        <td> <%= link_to "show", admin_path(user),target:'_blank',style:'color:green;'%> </td> 
+      <td> <%= link_to "Edit", edit_admin_path(user)%> </td>
+      <td> <%= link_to "Delete", admin_path(user), data:{
+        turbo_method: :delete,
+        turbo_confirm: "are you sure?",
+      }
+       
+      %></td> 
+ 
+    </tr>
+    
+    <% end %>
+  </tbody>
+</table>
+<button > <%= link_to "Create news", new_admin_path%>  </button>
+ 
+
+
+
+
+

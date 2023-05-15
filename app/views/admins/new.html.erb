@@ -1,0 +1,51 @@
+
+<h1>Create News</h1>
+<form action="/admins" method="post" accept-charset="UTF-8" >
+
+  <label for="CATEGORY">CATEGORY:</label>
+
+  <input id="CATEGORY" name="CATEGORY" type="text" />
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="CATEGORY" data-bs-toggle="dropdown" aria-expanded="true">
+    CATEGORY
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item"name="entertranment" >entertranment</a></li>
+    <li><a class="dropdown-item" name="breaking news" >breaking news</a></li>
+    <li><a class="dropdown-item"name="CATEGORY"  >Something else here</a></li>
+  </ul>
+</div>
+
+
+
+   <label for="CITY">CITY:</label>
+  <input id="CITY" name="CITY" type="text" />
+
+   <label for="AUTHOR">AUTHOR:</label>
+  <input id="AUTHOR" name="AUTHOR" type="text" />
+
+   <label for="TITLE">TITLE:</label>
+  <input id="TITLE" name="TITLE" type="text" />
+
+   <label for="SHORT"> SHORT_DISCRIPTION:</label>
+  <input id="SHORT" name="SHORT" type="text" />
+
+   <label for="DISCRIPTION">DISCRIPTION:</label>
+  <input id="DISCRIPTION" name="DISCRIPTION" type="text" />
+
+   <label for="images">Image:</label>
+  <input id="images" name="images" type="file" multiple="true"/>
+
+  <label for="banner">UPLOAD BANNER:</label>
+  <input id="banner" name="banner" type="file" multiple="true"/>
+
+<label for="video">UPLOAD VIDEO:</label>
+  <input id="video" name="video" type="file" multiple="true"/>
+
+
+
+  
+  <input name="commit" type="submit" value="submit" data-disable-with="Search" />
+</form>
+<button> <%= link_to "Back",:back%> </button>

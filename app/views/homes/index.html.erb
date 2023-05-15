@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" integrity="sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>News Website</title>
+</head>
+<body>
+
+    <!-- navbar section start -->
+
+    <div class="header">
+        <div class="logo">
+            NEWS
+        </div>
+        
+        <nav>
+            <ul>
+            <% @admins.each do |user| %>
+                <li><a href="#"><%= user.CATEGORY%></a></li>
+                
+<%end%>
+            </ul>
+            <div class="bar">
+                <i class="open fa-solid fa-bars-staggered"></i>
+                <i class="close fa-solid fa-xmark"></i>
+            </div>
+        </nav>
+    </div>
+
+    <!-- navbar section end -->
+
+    <!-- top head lines ans breaking news section start -->
+
+    <div class="topHeadlines">
+        <div class="left">
+            <div class="title">
+                <h2>Breaking News</h2>
+                 <% @admins.images.map do |img|%>
+    <img height="200" width="300"src=<%=(url_for(img))%>>
+<%end%>
+            </div>
+            <div class="img" id="breakingImg">
+                 
+            </div>
+            <div class="text" id="breakingNews">
+                <div class="title">
+                    
+                </div>
+                <div class="description">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="title">
+                <h2>Top Headlines</h2>
+                 <% @admins.each do |user| %>
+                <li><%=link_to"user.TITLE",home_path(user)%></li>
+                
+<%end%>
+            </div>
+            <div class="topNews">
+    
+            </div>
+
+        </div>
+    </div>
+
+    <!-- top head lines and breaking news section end -->
+
+    <!-- sport, business and technology news section start -->
+
+
+    <div class="page2">
+        <div class="news" id="sportsNews">
+            <div class="title">
+                <h2>Sports News</h2>
+
+            </div>
+            <div class="newsBox">
+            </div>
+        </div>
+        <div class="news" id="businessNews">
+            <div class="title">
+                <h2>Business News</h2>
+            </div>
+            <div class="newsBox">
+            </div>
+        </div>
+        <div class="news" id="techNews">
+            <div class="title">
+                <h2>Technology News</h2>
+            </div>
+            <div class="newsBox">
+            </div>
+        </div>
+    </div>
+
+    <!-- sport, business and technology news section end -->
+
+<!-- footer section start -->
+    <div class="footer">
+        <div class="box">
+            <div class="left">
+                <div class="categories">
+                    <p>Categories</p>
+                    <div>
+                        <p>Sports</p>
+                        
+                    </div>
+                    <div>
+                        <p>Business</p>
+                    </div>
+                    <div>
+                        <p>Technology</p>
+                    </div>
+                </div>
+                <div class="contactUs">
+                    <div class="contact">
+                        <p>Contact Us</p>
+                        <div>Phone No. - <span>9876543111</span></div>
+                        <div>Email - <span>abc@gmail.com</span></div>
+                        <div>Address - <span>Rewa, India</span></div>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="newsletter">
+                    <p>Subscribe to Our Newsletter</p>
+                    <div class="email">
+                        <input type="email" placeholder="Enter Your Email Here">
+                        <button>Subscribe</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- footer section end -->
+
+        <div class="copyrights">
+            Copyrights &copy; 2023 Surya
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

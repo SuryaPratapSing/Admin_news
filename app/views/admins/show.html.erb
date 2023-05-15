@@ -1,0 +1,84 @@
+
+<h1>Admin  pannel</h1>
+
+
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+    <th scope="colum">Id</th>
+      <th scope="colum">CATEGORY</th>
+      <th scope="colum">CITY</th>
+      <th scope="colum">AUTHOR</th>
+      <th scope="colum">TITLE</th>
+      <th scope="colum">SHORT_DISCRIPTION</th>
+      <th scope="colum">DISCRIPTION</th>
+      <th scope="colum">created_at</th>
+      <th scope="colum">updated_at</th>
+      <th scope="colum">Show News</th>
+      <th scope="colum">Edit News</th>
+      <th scope="colum">Delete News</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+    <td><%= @admin.id %></td>
+      <td><%= @admin.CATEGORY %></td>
+      <td><%= @admin.CITY %></td>
+      <td><%= @admin.AUTHOR %></td>
+      <td><%= @admin.TITLE %></td>
+      <td><%= @admin.SHORT %></td>
+      <td><%= @admin.DISCRIPTION %></td>
+
+      <td><%= @admin.created_at %></td>
+      <td><%= @admin.updated_at %></td>
+         <td> <%= link_to "Show", admin_path(@admin)%> </td>
+      <td> <%= link_to "Edit", edit_admin_path(@admin)%> </td>
+      <td> <%= link_to "Delete", admin_path(@admin), data:{
+        turbo_method: :delete,
+        turbo_confirm: "are you sure?",
+      }
+      
+      %> </td>  
+    </tr>
+    
+    
+  </tbody>
+</table>
+ <button > <%= link_to "Back", admins_path%>  </button>
+
+
+ <h1>Images</h1>
+ <% @admin.images.map do |img|%>
+    <img height="200" width="300"src=<%=(url_for(img))%>>
+<%end%>
+
+
+<h1>banner</h1>
+
+<% @admin.banner.map do |img|%>
+
+
+<a href="https://www.google.com/search?q=whatsapp+web&oq=&aqs=chrome.1.35i39i362l8.1808725j0j7&sourceid=chrome&ie=UTF-8">
+    <img  height="200" width="300" src=<%=(url_for(img))%>>
+</a>
+
+
+<%end%>
+<h1>video<h1>
+
+
+
+<video width="320" height="240" controls>
+  <source src="video_url.to_s" type="video/mp4">
+  <source src="video_url.to_s" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+
+<%= form_with model: admin do |form| %>
+  <div>
+    <%= form.label :CATEGORY %><br>
+    <%= form.text_field :CATEGORY %>
+
+
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="CATEGORY" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item"name="entertranment" >entertranment</a></li>
+    <li><a class="dropdown-item" name="breaking news" >breaking news</a></li>
+    <li><a class="dropdown-item"name="bestnews"  >Something else here</a></li>
+  </ul>
+</div>
+   
+  </div>
+
+  <div>
+    <%= form.label :CITY %><br>
+    <%= form.text_field :CITY %><br>
+  
+  </div>
+  <div>
+    <%= form.label :AUTHOR%><br>
+    <%= form.text_field :AUTHOR%><br>
+    
+  </div>
+  <div>
+    <%= form.label :TITLE %><br>
+    <%= form.text_field :TITLE %><br>
+    
+  </div>
+  <div>
+    <%= form.label :SHORT_DISCRIPTION %><br>
+    <%= form.text_field :SHORT %><br>
+  </div>
+ 
+ <div>
+    <%= form.label :DISCRIPTION %><br>
+    <%= form.text_field :DISCRIPTION %><br>
+  </div>
+  
+   <div>
+    <%= form.label :images %><br>
+    <%= form.file_field :images,:multiple=>true %>
+  </div>
+   <div>
+    <%= form.label :banner %><br>
+    <%= form.file_field :banner,:multiple=>true %>
+  </div>
+  <div>
+    <%= form.label :video %><br>
+    <%= form.file_field :video %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
